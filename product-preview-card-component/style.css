@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+}
+
+:root {
+    /* Primary colors */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    /* Neutral */
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.wrapper {
+    background-color: var(--cream);
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 10px;
+    height: 450px;
+    width: 600px;
+    overflow-x: clip;
+    margin: 20px;
+
+    display: flex;
+}
+
+.image-product {
+    background: url('./images/image-product-desktop.jpg') no-repeat;
+    background-size: cover;
+
+    flex: 1;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+:is(.title, .description, .price) {
+    padding: 10px 30px;
+}
+
+.category {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--dark-grayish-blue);
+    padding: 10px 30px;
+}
+
+.title {
+    font-family: 'Fraunces', serif;
+}
+
+.description {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-grayish-blue);
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price .actual-price {
+    font-family: 'Fraunces', serif;
+    color: var(--dark-cyan);
+    font-size: 34px;
+    margin-right: 20px;
+}
+
+.price .previous-price {
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+}
+
+.cart-button {
+    display: flex;
+    justify-content: center;
+}
+
+.add-to-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+    height: 50px;
+    outline: none;
+    border: none;
+    color: var(--white);
+    background-color: var(--dark-cyan);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.add-to-cart img {
+    margin-right: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: var(--very-dark-blue);
+}
+
+@media screen and (max-width: 375px) {
+    .card {
+        flex-direction: column;
+        height: 500px;
+        margin: 20px;
+    }
+
+    .image-product {
+        background: url('./images/image-product-mobile.jpg') no-repeat;
+        background-size: cover;
+    }
+
+    .category {
+        padding: 0 30px;
+    }
+
+}
